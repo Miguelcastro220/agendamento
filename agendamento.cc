@@ -1,78 +1,91 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
-	
-int dia;
-char(15) nome;
-int ano = 2026;
-int anoNasc;
-int idade;
-int valorConsulta = 150;
-int cartao;
-float pix;
+int main() {
 
+    int dia;
+    char nome[15];
+    int ano = 2026;
+    int anoNasc;
+    int idade;
+    int valorConsulta = 150;
+    int cartao;
+    float pix;
 
-printf("Ola seja bem-vind(a) ao agendamento de atendimento a psicologo infantil");
-	
-printf("Porfavor escreva o nome do paciente \n");
-scanf ("%d", &nome);
+    printf("Ola! Seja bem-vindo(a) ao agendamento de atendimento a psicologo infantil\n");
 
-printf("Escreva o ano de nascimento do paciente \n");
-scanf (" %d", &anoNasc);
+    printf("Por favor, escreva o nome do paciente:\n");
+    scanf("%14s", nome);
 
-idade = ano - anoNasc;
+    printf("Escreva o ano de nascimento do paciente:\n");
+    scanf("%d", &anoNasc);
 
-if (idade <= 12){
-printf("Paciente pode ser atendido");
-}	else  {
-printf("Paciente não tem a idade ideal");
-	return 0;
-}
+    idade = ano - anoNasc;
 
-printf("Escreva o dia do atendimento \n");
-scanf ("%d", &dia);
+    if (idade <= 12) {
+        printf("Paciente pode ser atendido\n");
+    } else {
+        printf("Paciente nao tem a idade ideal\n");
+        return 0;
+    }
 
-switch (dia){
+    printf("Escreva o dia do atendimento:\n");
+    scanf("%d", &dia);
 
-	case 1:
-		printf ("Domingo");
-		break;
-	case 2:
-		printf ("Segunda");
-		break;
-	case 3:
-		printf ("Terca");
-		break;
-	case 4:
-		printf ("Quarta");
-		break;
-	case 5:
-		printf ("Quinta");
-		break;
-	case 6:
-		printf ("Sexta");
-		break;
-	case 7:
-		printf ("Sabado");
-		break;
-}
+    switch (dia) {
 
-printf("Valor da consulta é de 150");
-printf("Voce pagara o valor no pix ou no cartao");
+        case 1:
+            printf("Domingo\n");
+            break;
 
+        case 2:
+            printf("Segunda\n");
+            break;
 
-printf("digite 1 para cartao ou 0 para pix \n");
-scanf ("%d", &cartao);
+        case 3:
+            printf("Terca\n");
+            break;
 
-if (cartao == 1)	{
-printf("O valor a ser Pago sera R$150,00");
-}	else {
-	pix = 150 - (150 * 0.10);
-printf ("O valor a ser pago sera R$%.2f", pix);
-scanf ("%.2f", &pix);
-	
-}
+        case 4:
+            printf("Quarta\n");
+            break;
 
+        case 5:
+            printf("Quinta\n");
+            break;
 
-return 0;
+        case 6:
+            printf("Sexta\n");
+            break;
+
+        case 7:
+            printf("Sabado\n");
+            break;
+
+        default:
+            printf("Dia invalido\n");
+            return 0;
+    }
+
+    printf("Valor da consulta: R$%d,00\n", valorConsulta);
+
+    printf("Voce pagara no Pix ou no cartao?\n");
+    printf("Digite 1 para cartao ou 0 para Pix:\n");
+    scanf("%d", &cartao);
+
+    if (cartao == 1) {
+
+        printf("O valor a ser pago sera R$150,00\n");
+
+    } else if (cartao == 0) {
+
+        pix = valorConsulta - (valorConsulta * 0.10);
+
+        printf("O valor a ser pago sera R$%.2f\n", pix);
+
+    } else {
+
+        printf("Opcao de pagamento invalida\n");
+    }
+
+    return 0;
 }
