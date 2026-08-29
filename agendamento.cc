@@ -17,6 +17,13 @@ int main() {
     scanf("%14s", nome);
 
     printf("Escreva o ano de nascimento do paciente:\n");
+    printf("1 - Domingo\n");
+    printf("2 - Segunda\n");
+    printf("3 - Terca\n");
+    printf("4 - Quarta\n");
+    printf("5 - Quinta\n");
+    printf("6 - Sexta\n");
+    printf("7 - Sabado\n");
     scanf("%d", &anoNasc);
 
     idade = ano - anoNasc;
